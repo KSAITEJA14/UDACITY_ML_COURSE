@@ -1,0 +1,29 @@
+RESULTS
+    training time: 366.834 s
+    prediction time: 39.315 s
+    Accuracy: 0.984072810011
+    
+    Reduced dataset
+    training time: 0.208 s
+    prediction time: 2.223 s
+    Accuracy: 0.884527872582
+   
+    Reduced dataset, complex rbf kernel
+    training time: 0.234 s
+    prediction time: 2.544 s
+    Accuracy: 0.616040955631
+    Reduced dataset & complex rbf kernel, accuracy for different values of C
+    C=10    0.616040955631
+    C=100   0.616040955631
+    C=1000  0.821387940842
+    C=10000 0.892491467577
+    
+    Complete dataset, rbf kernel, C=10000 accuracy
+    0.990898748578
+    
+    Reduced dataset predictions:
+    10: 1
+    26: 0
+    50: 1
+    
+    No of predictions for Sara(0) and Chris(1): Counter({0: 881, 1: 877})
