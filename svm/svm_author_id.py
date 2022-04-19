@@ -12,6 +12,8 @@ import sys
 from time import time
 sys.path.append("../tools/")
 from email_preprocess import preprocess
+from sklearn.metrics import accuracy_score
+
 
 
 ### features_train and features_test are the features for the training
@@ -19,21 +21,24 @@ from email_preprocess import preprocess
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
 
-
-#########################################################
-### your code goes here ###
-
-
-#########################################################
-
-#########################################################
-'''
-You'll be Provided similar code in the Quiz
-But the Code provided in Quiz has an Indexing issue
-The Code Below solves that issue, So use this one
-'''
-
 # features_train = features_train[:int(len(features_train)/100)]
 # labels_train = labels_train[:int(len(labels_train)/100)]
+
+#########################################################
+# clf = SVC(kernel='linear')
+clf = SVC(kernel = 'rbf',C=10000)
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+print( "accuracy:", accuracy_score(labels_test, pred))
+
+#########################################################
+
+print ("Predictions:")
+print ("10:", pred[10])
+print ("26:", pred[26])
+print ("50:", pred[50])
+
+c = Counter(pred)
+print ("No of predictions for Chris(1):", c[1])
 
 #########################################################
